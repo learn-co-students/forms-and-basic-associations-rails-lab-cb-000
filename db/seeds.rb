@@ -8,7 +8,15 @@
 
 # ID3 tag music genres are surprisingly specific.
 
-genres = Hash[[
+["First Song", "Second Song", "Third Song"].each do |title|
+  Song.create(title: title)
+end
+
+["Sting", "Prince", "The Beatles"].each do |name|
+  Artist.create(name: name)
+end
+
+Hash[[
   "Blues",
   "Classic Rock",
   "Country",
