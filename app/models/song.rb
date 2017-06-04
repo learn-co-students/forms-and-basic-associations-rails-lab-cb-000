@@ -9,16 +9,17 @@ class Song < ActiveRecord::Base
   end
 
   def genre_name
-    genre.name
+    genre&.name
   end
 
   def artist_name=(name)
     self.artist ||= Artist.create
     artist.name = name
+    artist.save
   end
 
   def artist_name
-    artist.name
+    artist&.name
   end
 
   def note_contents
@@ -29,7 +30,9 @@ class Song < ActiveRecord::Base
 
   def note_contents=(contents)
     contents.each do |content|
-      notes.build(content: content) unless content.empty?
+      notes.build(content: content) unless content.strip.empty?
     end
+
+
   end
 end
