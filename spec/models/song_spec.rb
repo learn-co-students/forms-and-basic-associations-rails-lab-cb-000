@@ -49,12 +49,12 @@ RSpec.describe Song, type: :model do
       expect(song.notes.map(&:content)).to eq notes
     end
     it 'adds to existing notes' do
-      song = Song.new
+      song = Song.new  #create new song  but do not persist
       notes = ['Great song']
-      song.note_contents = ['Great song']
+      song.note_contents = ['Great song' ] #should add to note db
       expect(song.notes.map(&:content)).to eq notes
       notes << 'much bass'
-      song.note_contents = ['much bass']
+      song.note_contents = ['much bass'] #should add to note db
       expect(song.notes.map(&:content)).to eq notes
       notes << 'wow'
       song.note_contents = ['wow']
