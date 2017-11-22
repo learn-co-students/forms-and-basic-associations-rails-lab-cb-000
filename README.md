@@ -1,3 +1,14 @@
+[X]rspec ./spec/features/song_form_spec.rb:5 # the song form creates a song on submit
+--> this test fails when I introduce artist_name to the form builder:
+SOLVED: create a new artist when rendering the new song form.  There might be a more elegant way, check solution after.
+
+[X]rspec ./spec/features/song_form_spec.rb:12 # the song form creates a song with an artist
+
+[]rspec ./spec/features/song_form_spec.rb:21 # the song form creates a song with a genre
+
+[]rspec ./spec/features/song_form_spec.rb:30 # the song form creates a song with notes
+
+
 # Forms And Basic Associations Rails Lab
 
 ## Objectives

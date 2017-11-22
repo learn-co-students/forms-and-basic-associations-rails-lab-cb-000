@@ -36,6 +36,7 @@ class Song < ActiveRecord::Base
 
   def note_contents=(contents)
     #expect add to existing notes
+    #accept array
 
     contents.each do |content|
       if content != ""
