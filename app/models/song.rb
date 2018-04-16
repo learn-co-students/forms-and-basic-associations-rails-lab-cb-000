@@ -10,9 +10,19 @@ class Song < ActiveRecord::Base
      self.artist = Artist.find_or_create_by(name: name)
    end
 
-  #  def artist_name
-  #     self.artist.name
-  #  end
+   def artist_name
+     if !self.artist.nil?
+      self.artist.name
+    end
+   end
+
+  def genre_name=(name)
+    self.genre = Genre.find_or_create_by(name: name)
+  end
+
+  def genre_name
+    self.genre.name
+  end
 
   def note_contents=(contents)
     # no idea
@@ -30,6 +40,6 @@ class Song < ActiveRecord::Base
        i.content
      end
 
-     ans
+     ans.reject(&:empty?)
    end
 end
