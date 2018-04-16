@@ -11,6 +11,8 @@ class Song < ActiveRecord::Base
    end
 
    def artist_name
+    #  couldve checked for nil earlier
+    # not quite sure why this works
      if !self.artist.nil?
       self.artist.name
     end
