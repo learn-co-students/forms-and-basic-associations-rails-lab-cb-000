@@ -9,9 +9,11 @@ class SongsController < ApplicationController
 
   def new
     @song = Song.new
+
   end
 
   def create
+    # binding.pry
     @song = Song.new(song_params)
 
     if @song.save
@@ -47,7 +49,8 @@ class SongsController < ApplicationController
   private
 
   def song_params
-    params.require(:song).permit(:title)
+    # checkbox would be an array cuz there are multiple. like :genre_id => []
+    # only one select field can be chosen here, tho. DUMB
+    params.require(:song).permit(:title, :artist_name, :genre_id, note_contents: [])
   end
 end
-
