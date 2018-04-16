@@ -3,8 +3,8 @@ class Song < ActiveRecord::Base
   belongs_to :genre
   has_many :notes
 
-  # this is key
-  attr_accessor :artist_name, :note_contents
+  # this is key??
+  # attr_accessor :artist_name
 
   def artist_name=(name)
      self.artist = Artist.find_or_create_by(name: name)
