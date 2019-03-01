@@ -21,15 +21,16 @@ class Song < ActiveRecord::Base
   end
 
   def note_contents
-    # binding.pry
+
     self.notes.map { |n| n.content }
   end
 
   def note_contents=(note_content)
-    binding.pry
     note_content.each do |n|
-      note = Note.create(content: n)
-      self.notes << note
+      if n != ""
+        note = Note.create(content: n)
+        self.notes << note
+      end
     end
   end
 
