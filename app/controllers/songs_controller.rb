@@ -12,9 +12,9 @@ class SongsController < ApplicationController
   end
 
   def create
-    binding.pry
+    # binding.pry
     @song = Song.new(song_params)
-    @song.artist =
+
 
     if @song.save
       redirect_to @song
